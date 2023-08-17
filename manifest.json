@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "No Tap-In X",
+  "description": "Une extension pour ne plus voir de posts frauduleux sur X (Twitter)",
+  "version": "0.0.0.1.",
+  "permission": ["storage"],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://feurtracker.fr/*"
+  ],
+  "content_scripts": [
+    {
+        "matches": [
+        "http://*.twitter.com/*", "http://*.x.com/*","https://*.twitter.com/*", "https://*.x.com/*"],
+        "js": ["main.js"],
+        "run_at": "document_end",
+        "all_frames": true
+    }
+  ],
+  "icons": {
+    "16": "images/icon16.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  }
+}
